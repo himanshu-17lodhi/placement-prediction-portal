@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Campus Placement Prediction Result</h1>
+    {% if result is not None %}
+        <h2>Prediction: {{ result }}</h2>
+    {% else %}
+        <h2>No Prediction Available</h2>
+    {% endif %}
+    <a href="{% url 'home' %}">Back to form</a>
+</body>
+</html>

@@ -1,1 +1,6 @@
-Django==4.2
+Django>=3.2
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn

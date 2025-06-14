@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Placement Prediction</title>
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <script src="{% static 'js/app.js' %}" defer></script>
+</head>
+<body>
+    <h1>
+        Campus Placement Prediction
+    </h1>
+    <form action="{% url 'submit' %}" method="post">
+        {% csrf_token %}
+        <label>Gender:</label>
+        <select name="gender" required>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select><br>
+
+        <label>Secondary Education Percentage (ssc_p):</label>
+        <input type="number" step="any" name="ssc_p" required><br>
+        <label>Secondary Board - Central?</label>
+        <select name="ssc_b" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label>Higher Secondary Percentage (hsc_p):</label>
+        <input type="number" step="any" name="hsc_p" required><br>
+        <label>Higher Secondary Board - Central?</label>
+        <select name="hsc_b" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+        <label>Higher Secondary Stream (hsc_s):</label>
+        <select name="hsc_s" required>
+            <option value="Commerce">Commerce</option>
+            <option value="Science">Science</option>
+            <option value="Arts">Arts</option>
+        </select><br>
+        <label>Degree Percentage (degree_p):</label>
+        <input type="number" step="any" name="degree_p" required><br>
+        <label>Degree Type (degree_t):</label>
+        <select name="degree_t" required>
+            <option value="Sci&Tech">Sci&Tech</option>
+            <option value="Comm&Mgmt">Comm&Mgmt</option>
+            <option value="Others">Others</option>
+        </select><br>
+        <label>Work Experience?</label>
+        <select name="workex" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+        <label>Employability Test Percentage (etest_p):</label>
+        <input type="number" step="any" name="etest_p" required><br>
+        <label>Specialisation:</label>
+        <select name="specialisation" required>
+            <option value="1">Mkt&Fin</option>
+            <option value="0">Mkt&HR</option>
+        </select><br>
+        <label>MBA Percentage (mba_p):</label>
+        <input type="number" step="any" name="mba_p" required><br>
+        <label>Status (Placed=1, Not Placed=0):</label>
+        <select name="status" required>
+            <option value="1">Placed</option>
+            <option value="0">Not Placed</option>
+        </select><br>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

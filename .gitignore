@@ -20,10 +20,9 @@ htmlcov/
 .tox/
 .nox/
 .pytest_cache/
-.ipynb_checkpoints/
+.ipynb_checkpoints/git add .
 staticfiles/
 static/
 media/
-*.pkl
 *.h5
 .env
